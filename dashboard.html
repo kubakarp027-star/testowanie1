@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Główny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container dashboard-container">
+        <h1>Witaj, <span id="username-display"></span>!</h1>
+        
+        <div class="dashboard-nav">
+            <h2>Twoje podstrony:</h2>
+            <ul>
+                <li><a href="subpage1.html">Podstrona 1</a></li>
+                <li><a href="subpage2.html">Podstrona 2</a></li>
+                <li><a href="subpage3.html">Podstrona 3</a></li>
+            </ul>
+        </div>
+        
+        <div class="files-section">
+            <h2>Pliki do pobrania:</h2>
+            <div class="file-item">
+                <span>Dokumentacja projektu.pdf</span>
+                <a href="files/dokumentacja.pdf" download class="download-btn">Pobierz</a>
+            </div>
+            <div class="file-item">
+                <span>Instrukcja obsługi.docx</span>
+                <a href="files/instrukcja.docx" download class="download-btn">Pobierz</a>
+            </div>
+            <div class="file-item">
+                <span>Prezentacja.pptx</span>
+                <a href="files/prezentacja.pptx" download class="download-btn">Pobierz</a>
+            </div>
+        </div>
+        
+        <button onclick="logout()" class="logout-btn">Wyloguj</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Wyświetl nazwę użytkownika
+        document.getElementById('username-display').textContent = 
+            localStorage.getItem('username') || 'Użytkowniku';
+    </script>
+</body>
+</html>
